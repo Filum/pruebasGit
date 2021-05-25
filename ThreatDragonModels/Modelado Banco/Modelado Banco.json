@@ -9,7 +9,725 @@
       {
         "title": "Davivienda",
         "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 50,
+                "y": 50
+              },
+              "angle": 0,
+              "id": "950d6db8-23e9-4ca2-a7f9-ea38d8b641e2",
+              "z": 1,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Suplantación",
+                  "type": "Spoofing",
+                  "description": "Cuando el cliente digita en el navegador la página del banco y es dirigido a una página falsa sin que el cliente se percate para que ingrese sus datos bancarios.",
+                  "mitigation": "Habilitar la autenticación de dos factores."
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Navegador"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 248,
+                "y": 244
+              },
+              "angle": 0,
+              "id": "1e75025c-7d1c-4b16-88ae-86878652d846",
+              "z": 2,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "title": "DoS",
+                  "description": "Un atacante podría generar un mensaje malintencionado.",
+                  "mitigation": "Implementar una cola de mensajes dudosos donde los mensajes se colocan después de un número fijo de reintentos."
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Aplicación web"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 213,
+                "y": 93
+              },
+              "target": {
+                "id": "1e75025c-7d1c-4b16-88ae-86878652d846"
+              },
+              "vertices": [
+                {
+                  "x": 310,
+                  "y": 140
+                },
+                {
+                  "x": 328,
+                  "y": 197
+                }
+              ],
+              "id": "6896df89-99ac-4cb9-b748-9b7771c7b437",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Solicitud web",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 3,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 247,
+                "y": 296
+              },
+              "target": {
+                "id": "950d6db8-23e9-4ca2-a7f9-ea38d8b641e2"
+              },
+              "vertices": [
+                {
+                  "x": 118,
+                  "y": 248
+                }
+              ],
+              "id": "b20422ab-9d21-4e24-a8f4-49f8ddd8de46",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Respuesta web",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 4,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 152,
+                "y": 364
+              },
+              "target": {
+                "x": 418,
+                "y": 222
+              },
+              "vertices": [
+                {
+                  "x": 153,
+                  "y": 369
+                },
+                {
+                  "x": 152,
+                  "y": 343
+                },
+                {
+                  "x": 152,
+                  "y": 288
+                },
+                {
+                  "x": 198,
+                  "y": 153
+                }
+              ],
+              "id": "51821e89-333d-408b-8a90-54a804b59a4f",
+              "z": 5,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 522,
+                "y": 45
+              },
+              "angle": 0,
+              "id": "67a61068-6d48-4ce7-bd9e-fe231de65f49",
+              "z": 6,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Usuario"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 345,
+                "y": 272
+              },
+              "target": {
+                "x": 519,
+                "y": 85
+              },
+              "vertices": [
+                {
+                  "x": 406,
+                  "y": 96
+                }
+              ],
+              "id": "962b13aa-6875-46e5-a0c8-730b0e209138",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Respuesta",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 7,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "67a61068-6d48-4ce7-bd9e-fe231de65f49"
+              },
+              "target": {
+                "x": 350,
+                "y": 298
+              },
+              "vertices": [
+                {
+                  "x": 526,
+                  "y": 285
+                }
+              ],
+              "id": "fbef7c19-365c-47a1-a83a-934c1cd22ff2",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Solicitud",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 8,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 504,
+                "y": 27
+              },
+              "target": {
+                "x": 686,
+                "y": 166
+              },
+              "vertices": [
+                {
+                  "x": 453,
+                  "y": 165
+                },
+                {
+                  "x": 463,
+                  "y": 210
+                },
+                {
+                  "x": 530,
+                  "y": 225
+                },
+                {
+                  "x": 671,
+                  "y": 172
+                },
+                {
+                  "x": 657,
+                  "y": 180
+                },
+                {
+                  "x": 681,
+                  "y": 166
+                }
+              ],
+              "id": "2ea84754-c8bd-40f3-b552-17275f2e4bd3",
+              "z": 9,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 412,
+                "y": 395
+              },
+              "angle": 0,
+              "id": "301a75c5-c5b1-41ca-b2bf-9a73909a8fc9",
+              "z": 10,
+              "hasOpenThreats": true,
+              "isALog": true,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "outOfScope": false,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Robo de credenciales",
+                  "type": "Information disclosure",
+                  "description": "Un atacante podría obtener las credenciales de la base de datos y utilizarlas para realizar consultas no autorizadas.",
+                  "mitigation": "Utilizar un firewall para restringir el acceso a la base de datos."
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "ORACLE DB"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 347,
+                "y": 475
+              },
+              "target": {
+                "x": 655,
+                "y": 478
+              },
+              "vertices": [
+                {
+                  "x": 493,
+                  "y": 311
+                },
+                {
+                  "x": 630,
+                  "y": 433
+                }
+              ],
+              "id": "92831833-0aa2-4ca3-bcc0-8daefd0066eb",
+              "z": 11,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "1e75025c-7d1c-4b16-88ae-86878652d846"
+              },
+              "target": {
+                "id": "301a75c5-c5b1-41ca-b2bf-9a73909a8fc9"
+              },
+              "vertices": [
+                {
+                  "x": 364,
+                  "y": 422
+                },
+                {
+                  "x": 387,
+                  "y": 437
+                }
+              ],
+              "id": "6da6f509-5816-4271-a782-c21f275dceb0",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Consultas",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 12,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 486,
+                "y": 393
+              },
+              "target": {
+                "id": "1e75025c-7d1c-4b16-88ae-86878652d846"
+              },
+              "vertices": [
+                {
+                  "x": 398,
+                  "y": 341
+                }
+              ],
+              "id": "4ad4a68e-829c-45b5-85e6-fd11e169d0a3",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Resultados de la\nconsulta de la\naplicación web",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 13,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 712,
+                "y": 251
+              },
+              "angle": 0,
+              "id": "b485c5f4-d6dd-4384-acdd-49ad7630d7de",
+              "z": 14,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Aplicación\nmóvil"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 550,
+                "y": 394
+              },
+              "target": {
+                "id": "b485c5f4-d6dd-4384-acdd-49ad7630d7de"
+              },
+              "vertices": [
+                {
+                  "x": 626,
+                  "y": 303
+                },
+                {
+                  "x": 688,
+                  "y": 296
+                },
+                {
+                  "x": 710,
+                  "y": 299
+                }
+              ],
+              "id": "9b2b51b9-923d-4242-98a0-fa76232e5f44",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5061976092445878,
+                    "offset": 13.879822325564056
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Resultados de la\nconsulta de la\naplicación móvil",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 15,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 766,
+                "y": 352
+              },
+              "target": {
+                "x": 573,
+                "y": 442
+              },
+              "vertices": [
+                {
+                  "x": 692,
+                  "y": 421
+                }
+              ],
+              "id": "8316214a-57be-4834-9b89-a008f57867c6",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Consultas",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 16,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 813,
+                "y": 279
+              },
+              "target": {
+                "x": 683,
+                "y": 88
+              },
+              "vertices": [
+                {
+                  "x": 885,
+                  "y": 125
+                }
+              ],
+              "id": "2ed05332-e5a7-46d2-9515-48721db11a1a",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Respuesta",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 17,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "67a61068-6d48-4ce7-bd9e-fe231de65f49"
+              },
+              "target": {
+                "x": 723,
+                "y": 273
+              },
+              "vertices": [
+                {
+                  "x": 662,
+                  "y": 234
+                },
+                {
+                  "x": 718,
+                  "y": 268
+                }
+              ],
+              "id": "5f47a819-d093-4045-bf74-e0e34fbd4f1c",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Solicitud",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 18,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 712,
+                "y": 55
+              },
+              "target": {
+                "x": 618,
+                "y": 242
+              },
+              "vertices": [
+                {
+                  "x": 875,
+                  "y": 208
+                }
+              ],
+              "id": "831fd276-d86e-46db-b5bf-adc1ff57a623",
+              "z": 19,
+              "attrs": {}
+            }
+          ]
+        },
+        "size": {
+          "height": 590,
+          "width": 1325
+        }
       }
     ],
     "reviewer": "Minor Madrigal"

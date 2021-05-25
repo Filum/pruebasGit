@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "title": "Modelado Banco",
+    "owner": "Andrea Rojas"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "Davivienda",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ],
+    "reviewer": "Minor Madrigal"
+  }
+}
